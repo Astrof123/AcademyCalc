@@ -2,7 +2,38 @@ const screenElem = document.getElementById('box');
 let screen = '';
 let memory = '0';
 
+function solve(command) {
+    let screenElems = screen.split(' ');
+    
+    let num1 = screenElems[0];
 
+    if (command) {
+        switch(command) {
+            case '%':
+                return String(Number(num1) * (Number(screenElems[2]) / 100));
+            case 'sqrt':
+                return String(Number(num1) ** 0.5);
+            case 'pow':
+                return String(Number(num1) ** 2);
+            case '1divx':
+                return String(1 / Number(num1)).substring(0, 6);
+        }
+    }
+
+    let sign = screenElems[1];
+    let num2 = screenElems[2];
+
+    switch(sign) {
+        case '+':
+            return String(Number(num1) + Number(num2));
+        case '-':
+            return String(Number(num1) - Number(num2));
+        case '×':
+            return String(Number(num1) * Number(num2));
+        case '÷':
+            return String(Number(num1) - Number(num2));   
+    }
+}
 
 
 
