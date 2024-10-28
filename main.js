@@ -2,6 +2,10 @@ const screenElem = document.getElementById('box');
 let screen = '';
 let memory = '0';
 
+
+
+
+
 function updateScreen() {
     screenElem.textContent = screen;
 }
